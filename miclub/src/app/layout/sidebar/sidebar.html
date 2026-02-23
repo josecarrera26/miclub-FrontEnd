@@ -1,0 +1,66 @@
+<aside class="w-64 h-full bg-[#3F3D91] flex flex-col shadow-xl">
+    <div class="p-6 border-b border-white/10">
+        <h2 class="text-white text-lg font-black tracking-tight">MI PANEL</h2>
+    </div>
+
+    <nav class="flex-1 px-4 py-6 space-y-3">
+
+        <a routerLink="/productos" routerLinkActive="bg-[#91C141] !text-[#3F3D91] shadow-lg scale-105"
+            class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10 group">
+            <span class="text-xl">📦</span>
+            <span class="flex-1">Productos</span>
+            <div routerLinkActive="block" class="hidden w-2 h-2 bg-[#3F3D91] rounded-full"></div>
+        </a>
+
+        <a routerLink="/pedidos" routerLinkActive="bg-[#F5A623] !text-[#3F3D91] shadow-lg scale-105"
+            class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10">
+            <span class="text-xl">📝</span>
+            <span class="flex-1">Mis Pedidos</span>
+        </a>
+
+        <a routerLink="/carrito" routerLinkActive="bg-[#E61D6E] !text-white shadow-lg scale-105"
+            class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10">
+            <span class="text-xl">🛒</span>
+            <span class="flex-1">Mi Carrito</span>
+        </a>
+        @if(permisosAdmin){
+        <div>
+            <button (click)="togglePrecalificador()"
+                class="w-full flex items-center justify-between p-3 rounded-lg text-white font-bold hover:bg-white/10 transition-all">
+                <div class="flex items-center gap-3">
+                    <span>🎯</span>
+                    <span>Precalificador</span>
+                </div>
+                <span class="transition-transform duration-300" [class.rotate-180]="isPrecalificadorOpen">
+                    ▼
+                </span>
+            </button>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                [style.max-height]="isPrecalificadorOpen ? '120px' : '0px'">
+                <div class="pl-10 pr-2 py-2 space-y-1">
+
+                    <a routerLink="/precalificador/" routerLinkActive="text-[#91C141]"
+                        class="block p-2 text-sm text-gray-300 hover:text-white transition-colors font-medium">
+                        • Crear Nuevo
+                    </a>
+
+                    <a routerLink="/precalificador/historial" routerLinkActive="text-[#91C141]"
+                        class="block p-2 text-sm text-gray-300 hover:text-white transition-colors font-medium">
+                        • Historial
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        }
+
+    </nav>
+
+    <div class="p-4 mt-auto border-t border-white/10 bg-black/10">
+        <button (click)="onLogout()"
+            class="flex items-center gap-3 w-full p-3 text-red-300 font-bold hover:text-red-100 transition-colors group">
+            <span class="group-hover:scale-120 transition-transform">🚪</span>
+            <span>Cerrar Sesión</span>
+        </button>
+    </div>
+</aside>

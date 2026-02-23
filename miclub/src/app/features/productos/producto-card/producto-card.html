@@ -1,0 +1,41 @@
+<div
+    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col h-full group transition-all hover:shadow-xl hover:-translate-y-1">
+
+    <div class="h-56 w-full relative bg-gray-50">
+        <swiper-container slides-per-view="1" navigation="true" pagination="true" class="w-full h-full">
+
+            @for (img of producto.imagenes; track img) {
+            <swiper-slide class="relative flex justify-center items-center">
+                <img [src]="img" class="w-full h-full object-cover" [alt]="producto.nombre">
+
+                <div [routerLink]="['/producto', producto.id]" class="absolute inset-0 cursor-pointer z-0">
+                </div>
+            </swiper-slide>
+            }
+        </swiper-container>
+
+        <div
+            class="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm pointer-events-none">
+            <span class="text-club-blue font-black text-sm">${{ producto.precio }}</span>
+        </div>
+    </div>
+
+    <div class="p-5 flex flex-col flex-1">
+        <div class="cursor-pointer mb-4 flex-1" [routerLink]="['/producto', producto.id]">
+            <h3
+                class="font-black text-club-blue text-base uppercase mb-1 truncate group-hover:text-club-pink transition-colors">
+                {{ producto.nombre }}
+            </h3>
+            <p class="text-gray-400 text-xs line-clamp-2 leading-relaxed">
+                {{ producto.descripcion }}
+            </p>
+        </div>
+
+        @if (auth.isLoggedIn$ | async) {
+        <button
+            class="w-full bg-club-green text-club-blue py-2.5 rounded-xl font-black text-xs hover:bg-club-blue hover:text-white transition-all duration-300">
+            AÑADIR AL CARRITO 🛒
+        </button>
+        }
+    </div>
+</div>

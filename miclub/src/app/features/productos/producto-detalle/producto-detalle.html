@@ -1,0 +1,60 @@
+@if (producto) {
+<div class="max-w-6xl mx-auto p-6 animate-fade-in">
+    <div class="flex flex-col md:flex-row gap-12 bg-white p-8 rounded-3xl shadow-xl">
+
+        <div class="w-full md:w-1/2 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100">
+            <swiper-container style="--swiper-navigation-color: #3F3D91; --swiper-pagination-color: #91C141"
+                navigation="true" pagination="true" space-between="10" class="h-[400px] md:h-[500px]">
+
+                @for (img of producto.imagenes; track img) {
+                <swiper-slide>
+                    <img [src]="img" class="w-full h-full object-cover" [alt]="producto.nombre">
+                </swiper-slide>
+                }
+            </swiper-container>
+        </div>
+
+        <div class="w-full md:w-1/2 space-y-6 flex flex-col justify-center">
+            <nav class="text-xs text-gray-400 font-bold uppercase tracking-widest">
+                Home / Productos / {{ producto.nombre }}
+            </nav>
+
+            <h1 class="text-5xl font-black text-club-blue uppercase leading-none">
+                {{ producto.nombre }}
+            </h1>
+
+            <div class="flex items-center gap-4">
+                <p class="text-4xl text-club-green font-black">${{ producto.precio }}</p>
+                <span class="bg-club-green/10 text-club-green px-3 py-1 rounded-full text-xs font-bold">
+                    Disponible
+                </span>
+            </div>
+
+            <div class="h-1.5 w-24 bg-club-pink rounded-full"></div>
+
+            <p class="text-gray-600 text-lg leading-relaxed">
+                {{ producto.descripcion }}
+            </p>
+
+            @if (auth.isLoggedIn$ | async) {
+            <div class="pt-6 space-y-4">
+                <button class="w-full bg-club-blue text-white py-5 rounded-2xl font-black text-xl 
+                               hover:bg-club-purple transition-all shadow-lg hover:shadow-club-blue/20 
+                               transform active:scale-95">
+                    AÑADIR AL CARRITO 🛒
+                </button>
+
+                <p class="text-center text-sm text-gray-400 font-medium italic">
+                    Envío gratuito en tu primera compra
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+} @else {
+<div class="flex flex-col items-center justify-center py-40 animate-pulse">
+    <div class="text-6xl mb-4">📦</div>
+    <p class="text-gray-500 font-bold text-xl uppercase tracking-tighter">Buscando producto en Mi Club...</p>
+</div>
+}

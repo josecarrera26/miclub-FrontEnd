@@ -1,0 +1,42 @@
+<div class="min-h-screen flex bg-gray-50">
+    <div class="hidden lg:flex w-1/2 bg-[#3F3D91] items-center justify-center p-12">
+        <div class="max-w-md text-center">
+            <img src="assets/images/logo/MiClubLogo.png" class="h-32 mx-auto mb-8 object-contain" alt="Logo">
+            <h1 class="text-4xl font-black text-white mb-4 uppercase">Bienvenido a Mi Club</h1>
+            <p class="text-indigo-200 text-lg">La plataforma exclusiva para gestionar tus beneficios y pedidos de manera
+                rápida.</p>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+        <div class="max-w-md w-full">
+            <h2 class="text-3xl font-black text-[#3F3D91] mb-2">INICIAR SESIÓN</h2>
+            <p class="text-gray-500 mb-8">Ingresa tus credenciales para continuar.</p>
+
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Email</label>
+                    <input type="email" placeholder="ejemplo@miclub.com"
+                        class="w-full px-4 py-4 rounded-xl border border-gray-200 focus:border-[#91C141] focus:ring-2 focus:ring-[#91C141]/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label
+                        class="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Contraseña</label>
+                    <input type="password" placeholder="••••••••"
+                        class="w-full px-4 py-4 rounded-xl border border-gray-200 focus:border-[#91C141] focus:ring-2 focus:ring-[#91C141]/20 outline-none transition-all">
+                </div>
+
+                <button (click)="onLogin()"
+                    class="w-full bg-[#3F3D91] text-white py-4 rounded-xl font-black text-lg hover:bg-[#E61D6E] transition-all shadow-lg shadow-indigo-200">
+                    ENTRAR
+                </button>
+
+                <p class="text-center text-gray-500 font-medium">
+                    ¿No tienes cuenta?
+                    <a routerLink="/register" class="text-[#E61D6E] font-black hover:underline">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

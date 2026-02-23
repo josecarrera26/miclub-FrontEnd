@@ -1,0 +1,46 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+    <div class="bg-white w-full max-w-4xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+
+        <div class="hidden md:block w-1/3 bg-[#91C141] p-10 text-[#3F3D91]">
+            <h3 class="text-2xl font-black mb-4">ÚNETE A<br>NOSOTROS</h3>
+            <p class="font-bold opacity-80">Crea tu cuenta y empieza a disfrutar de los beneficios del club.</p>
+        </div>
+
+        <div class="flex-1 p-10">
+            <h2 class="text-3xl font-black text-[#3F3D91] mb-8">NUEVA CUENTA</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Nombre Completo</label>
+                    <input type="text"
+                        class="w-full p-3 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-[#91C141]">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Email</label>
+                    <input type="email"
+                        class="w-full p-3 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-[#91C141]">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Contraseña</label>
+                    <input type="password"
+                        class="w-full p-3 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-[#91C141]">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Confirmar</label>
+                    <input type="password"
+                        class="w-full p-3 bg-gray-50 border-none rounded-lg focus:ring-2 focus:ring-[#91C141]">
+                </div>
+            </div>
+
+            <button
+                class="w-full bg-[#E61D6E] text-white py-4 rounded-xl font-black shadow-lg hover:scale-[1.02] transition-transform">
+                CREAR MI CUENTA
+            </button>
+
+            <a routerLink="/login"
+                class="block text-center mt-6 text-xs font-bold text-gray-400 uppercase tracking-widest hover:text-[#3F3D91]">
+                Ya tengo cuenta, quiero volver
+            </a>
+        </div>
+    </div>
+</div>
