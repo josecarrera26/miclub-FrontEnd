@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Carousel } from '../../../shared/components/carousel/carousel';
 import { Productos, ProductoService } from '../../../core/services/productos';
 import { ProductoCard } from '../producto-card/producto-card';
@@ -7,7 +6,7 @@ import { Auth } from '../../../core/services/auth';
 
 @Component({
   selector: 'app-productos-list',
-  imports: [RouterLink, Carousel, ProductoCard],
+  imports: [Carousel, ProductoCard],
   templateUrl: './productos-list.html',
   styleUrl: './productos-list.css',
 })

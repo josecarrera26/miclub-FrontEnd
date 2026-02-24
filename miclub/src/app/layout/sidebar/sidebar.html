@@ -7,20 +7,28 @@
 
         <a routerLink="/productos" routerLinkActive="bg-[#91C141] !text-[#3F3D91] shadow-lg scale-105"
             class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10 group">
-            <span class="text-xl">📦</span>
+            <span class="text-xl">
+                <img src="assets/images/sideBar/logistica.png" alt="Carrito"
+                    class="h-8 w-8 object-contain max-w-full block">
+            </span>
             <span class="flex-1">Productos</span>
             <div routerLinkActive="block" class="hidden w-2 h-2 bg-[#3F3D91] rounded-full"></div>
         </a>
 
         <a routerLink="/pedidos" routerLinkActive="bg-[#F5A623] !text-[#3F3D91] shadow-lg scale-105"
             class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10">
-            <span class="text-xl">📝</span>
+            <span class="text-xl">
+                <img src="assets/images/sideBar/hito.png" alt="Carrito" class="h-8 w-8 object-contain max-w-full block">
+            </span>
             <span class="flex-1">Mis Pedidos</span>
         </a>
 
         <a routerLink="/carrito" routerLinkActive="bg-[#E61D6E] !text-white shadow-lg scale-105"
             class="flex items-center gap-3 p-3 rounded-xl text-white font-bold transition-all duration-200 hover:bg-white/10">
-            <span class="text-xl">🛒</span>
+            <span class="text-3xl">
+                <img src="assets/images/sideBar/carrito-de-compras.png" alt="Carrito"
+                    class="h-8 w-8 object-contain max-w-full block">
+            </span>
             <span class="flex-1">Mi Carrito</span>
         </a>
         @if(permisosAdmin){
@@ -28,7 +36,10 @@
             <button (click)="togglePrecalificador()"
                 class="w-full flex items-center justify-between p-3 rounded-lg text-white font-bold hover:bg-white/10 transition-all">
                 <div class="flex items-center gap-3">
-                    <span>🎯</span>
+                    <span class="text-3xl">
+                        <img src="assets/images/sideBar/estrellas-de-calificacion.png" alt="Carrito"
+                            class="h-8 w-8 object-contain max-w-full block">
+                    </span>
                     <span>Precalificador</span>
                 </div>
                 <span class="transition-transform duration-300" [class.rotate-180]="isPrecalificadorOpen">
@@ -59,7 +70,10 @@
     <div class="p-4 mt-auto border-t border-white/10 bg-black/10">
         <button (click)="onLogout()"
             class="flex items-center gap-3 w-full p-3 text-red-300 font-bold hover:text-red-100 transition-colors group">
-            <span class="group-hover:scale-120 transition-transform">🚪</span>
+            <span class="text-3xl">
+                <img src="assets/images/sideBar/cerrar-sesion.png" alt="Carrito"
+                    class="h-8 w-8 object-contain max-w-full block">
+            </span>
             <span>Cerrar Sesión</span>
         </button>
     </div>

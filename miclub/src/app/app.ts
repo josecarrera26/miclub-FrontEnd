@@ -4,10 +4,11 @@ import { Header } from './layout/header/header';
 import { Sidebar } from './layout/sidebar/sidebar';
 import { Auth } from './core/services/auth';
 import { AsyncPipe } from '@angular/common';
+import { Footer } from './layout/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Sidebar, AsyncPipe],
+  imports: [RouterOutlet, Header, Sidebar, AsyncPipe, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

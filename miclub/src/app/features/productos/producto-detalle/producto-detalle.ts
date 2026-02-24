@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoService, Productos } from '../../../core/services/productos';
 import { Auth } from '../../../core/services/auth';
+import { Carousel } from '../../../shared/components/carousel/carousel';
+
 
 @Component({
   selector: 'app-producto-detalle',
-  imports: [CommonModule],
+  imports: [CommonModule, Carousel],
   templateUrl: './producto-detalle.html',
   styleUrl: './producto-detalle.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

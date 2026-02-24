@@ -1,1 +1,14 @@
 <p>precafundacion works!</p>
+
+<form [formGroup]="profileForm">
+    <div formArrayName="aliases">
+        <h2>Aliases</h2>
+        <button (click)="addAlias()">+ Add another Alias</button>
+        @for (alias of aliases.controls; track $index; let i = $index) {
+        <div>
+            <label for="alias">Alias:</label>
+            <input id="alias" type="text" [formControlName]="i">
+        </div>
+        }
+    </div>
+</form>

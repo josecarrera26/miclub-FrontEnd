@@ -10,7 +10,7 @@ import { Auth } from '../../core/services/auth';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  permisosAdmin: boolean = false;
+  permisosAdmin: boolean = true;
   isPrecalificadorOpen: boolean = false;
 
   constructor(
